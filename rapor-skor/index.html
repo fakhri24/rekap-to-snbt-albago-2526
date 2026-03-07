@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Laporan Tryout UTBK</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="report-container" id="main-ui-container">
+      <div class="header">
+        <h1>LAPORAN HASIL TRYOUT UTBK 2026</h1>
+        <p>Periode Bulan Februari 2026</p>
+      </div>
+
+      <div class="controls">
+        <div class="search-group">
+          <label for="search-input">Cari Siswa:</label>
+          <input type="text" id="search-input" placeholder="Ketik nama..." />
+        </div>
+        <div class="dropdown-group">
+          <label for="student-select">Pilih:</label>
+          <select id="student-select">
+            <option value="">-- Memuat Data... --</option>
+          </select>
+        </div>
+        <div class="btn-group">
+          <button class="btn-print" id="print-single-btn">
+            Cetak 1 Laporan
+          </button>
+          <button class="btn-print btn-print-all" id="print-all-btn">
+            Cetak Semua Siswa
+          </button>
+        </div>
+      </div>
+
+      <div id="single-report-content"></div>
+    </div>
+
+    <div id="batch-report-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
