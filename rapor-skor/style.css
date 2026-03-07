@@ -336,7 +336,7 @@ body {
   .identity-table th,
   .identity-table td {
     font-size: 12px;
-    padding: 8px;
+    padding: 6px;
   }
   .controls {
     flex-direction: column;
