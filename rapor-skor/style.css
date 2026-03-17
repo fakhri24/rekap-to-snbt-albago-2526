@@ -328,7 +328,7 @@ body {
 }
 
 /* TAMPILAN MOBILE */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .charts-wrapper {
     grid-template-columns: 1fr;
   }
@@ -367,8 +367,12 @@ body {
 
 /* --- KHUSUS CETAK PDF --- */
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
   body {
-    background-color: white;
+    background-color: #f0f2f5 !important;
     padding: 0;
   }
   .controls {
@@ -389,28 +393,36 @@ body {
   .score-summary-container,
   .identity-table {
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   /* Logika Tampil/Sembunyi saat Mode Cetak Semua */
   body.is-batch-printing #main-ui-container {
     display: none !important;
   }
-
-  /* Kembalikan wadah rahasia ke posisi normal saat masuk ke mode cetak (kertas) */
   body.is-batch-printing #batch-report-container {
     position: static !important;
     visibility: visible !important;
     width: 100% !important;
   }
 
+  /* Kembalikan tampilan kontainer seperti di web */
+  .report-container {
+    max-width: none !important;
+    box-shadow: 0 0 0 1px #e1e4e8 !important; /* Border halus sebagai ganti shadow tebal */
+    margin: 0 auto 20px auto !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+  }
+
   .batch-item {
     page-break-after: always;
-    box-shadow: none;
-    margin: 0;
-    padding: 0 0 20px 0;
+    break-after: page;
     border: none;
   }
   .batch-item:last-child {
     page-break-after: auto;
-  } /* Halaman terakhir tidak perlu blank page */
+    break-after: auto;
+  }
 }
