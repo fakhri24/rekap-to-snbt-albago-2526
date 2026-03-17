@@ -1,6 +1,61 @@
-document
-  .getElementById("print-single-btn")
-  .addEventListener("click", () => window.print());
+document.getElementById("print-single-btn").addEventListener("click", () => {
+  const btn = document.getElementById("print-single-btn");
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Menyiapkan Cetak...";
+
+  // Ambil canvas tunggal
+  const radarCanvas = document.getElementById("radarChart_single");
+  const lineCanvas = document.getElementById("lineChart_single");
+
+  if (!radarCanvas || !lineCanvas) {
+    window.print();
+    btn.disabled = false;
+    btn.textContent = originalText;
+    return;
+  }
+
+  const radarParent = radarCanvas.parentNode;
+  const lineParent = lineCanvas.parentNode;
+
+  // Konversi ke Base64 (Gambar Statis)
+  const radarBase64 = radarCanvas.toDataURL("image/png");
+  const lineBase64 = lineCanvas.toDataURL("image/png");
+
+  // Buat Elemen Image untuk ditimpa ke dalam halaman
+  const radarImg = document.createElement("img");
+  radarImg.src = radarBase64;
+  radarImg.style.width = "100%";
+  radarImg.style.height = "100%";
+  radarImg.style.objectFit = "contain";
+
+  const lineImg = document.createElement("img");
+  lineImg.src = lineBase64;
+  lineImg.style.width = "100%";
+  lineImg.style.height = "100%";
+  lineImg.style.objectFit = "contain";
+
+  // Sembunyikan Canvas aslinya, tampilkan Gambar Sementara
+  radarCanvas.style.display = "none";
+  lineCanvas.style.display = "none";
+
+  radarParent.appendChild(radarImg);
+  lineParent.appendChild(lineImg);
+
+  // Beri waktu browser memproses gambar sebelum print dialog ditarik
+  setTimeout(() => {
+    window.print();
+
+    // Kembalikan ke Canvas interaktif setelah jendela print ditutup
+    radarCanvas.style.display = "block";
+    lineCanvas.style.display = "block";
+    radarImg.remove();
+    lineImg.remove();
+
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }, 500);
+});
 
 let radarChartInstance = null;
 let lineChartInstance = null;
