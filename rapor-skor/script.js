@@ -74,8 +74,8 @@ const LABELS_PANJANG = [
 ];
 const LABELS_PENDEK = ["PU", "PK", "PPU", "PBM", "LBI", "LBE", "PM"];
 
-const SCHOOL_AVG = [554, 418, 602, 616, 586, 534, 400];
-const SCHOOL_MAX = [726, 825, 758, 782, 842, 749, 949];
+const SCHOOL_AVG = [607, 549, 610, 594, 594, 587, 517];
+const SCHOOL_MAX = [756, 744, 760, 782, 754, 827, 835];
 
 const TANGGAL_TO = [
   "11-09-2025",
