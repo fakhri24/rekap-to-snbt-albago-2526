@@ -74,8 +74,8 @@ const LABELS_PANJANG = [
 ];
 const LABELS_PENDEK = ["PU", "PK", "PPU", "PBM", "LBI", "LBE", "PM"];
 
-const SCHOOL_AVG = [607, 549, 610, 594, 594, 587, 517];
-const SCHOOL_MAX = [756, 744, 760, 782, 754, 827, 835];
+const SCHOOL_AVG = [599, 571, 609, 606, 594, 556, 602];
+const SCHOOL_MAX = [727, 783, 762, 757, 869, 746, 894];
 
 const TANGGAL_TO = [
   "11-09-2025",
@@ -87,7 +87,7 @@ const TANGGAL_TO = [
   "28-02-2026",
   "07-03-2026",
   "11-03-2026",
-  "Maret 2026",
+  "18-03-2026",
   "Maret 2026",
   "Maret 2026",
 ];
