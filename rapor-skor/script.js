@@ -74,8 +74,8 @@ const LABELS_PANJANG = [
 ];
 const LABELS_PENDEK = ["PU", "PK", "PPU", "PBM", "LBI", "LBE", "PM"];
 
-const SCHOOL_AVG = [567, 431, 593, 590, 519, 475, 466];
-const SCHOOL_MAX = [787, 1000, 875, 800, 767, 773, 886];
+const SCHOOL_AVG = [568, 487, 592, 632, 526, 549, 530];
+const SCHOOL_MAX = [777, 797, 828, 823, 870, 787, 830];
 
 const TANGGAL_TO = [
   "11-09-2025",
@@ -89,7 +89,7 @@ const TANGGAL_TO = [
   "11-03-2026",
   "18-03-2026",
   "08-04-2026",
-  "Maret 2026",
+  "11-04-2026",
 ];
 
 function formatAngka(str) {
